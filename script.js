@@ -3,6 +3,8 @@ let boxes = document.querySelectorAll(".box");
 let turn = document.querySelector(".turn-first");
 let winnerShow = document.querySelector(".winner-displayer-container");
 let actualWinner = document.querySelector(".winner-displayer");
+let newbtn = document.querySelector(".new-btn");
+let restartbtn = document.querySelector(".restart-btn");
 
 let playerO = true;
 // All win conditions of the game 
@@ -57,3 +59,20 @@ boxes.forEach((box)=>{
         checkWinner();
     })
 })
+
+newbtn.addEventListener("click",()=>{
+    winnerShow.classList.add("hide");
+    for(box of boxes){
+        box.disabled = false;
+        box.innerText = "";
+    }
+})
+
+restartbtn.addEventListener("click",()=>{
+    winnerShow.classList.add("hide");
+    for(box of boxes){
+        box.disabled = false;
+        box.innerText = "";
+    }
+})
+
