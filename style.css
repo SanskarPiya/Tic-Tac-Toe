@@ -1,0 +1,94 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+    background-color:#FBF5DD;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-content:space-between;
+}
+
+header{
+    background-color:#16404D;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.game-title{
+    color:rgb(242, 242, 242);
+    font-size:60px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    padding:15px 0px 10px;
+}
+
+.turn-container{
+    display:flex;
+    gap:5px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    padding-bottom:7px; 
+}
+
+.turn-second{
+    color:rgb(206, 206, 206);
+}
+
+.game-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.box-container{
+    width:400px;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    padding:10px 0px;
+    margin:35px 0px;
+}
+
+.box{
+    height:110px;
+    width:110px;
+    border:none;
+    background-color:#A6CDC6;
+    font-size:75px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#16404D;
+    border-radius:15px;
+    box-shadow:2px 2px 10px grey;
+}
+
+.restart-btn-container{
+    padding:14px;
+    background-color:#16404D;
+    text-align:center;
+}
+.restart-btn{
+    text-transform:uppercase;
+    background-color:#16404D;
+    color:white;
+    border:none;
+    width:100%;
+    
+    font-size:15px;
+    border-radius:15px;
+    padding:15px 25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
