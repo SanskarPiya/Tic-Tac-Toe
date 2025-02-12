@@ -13,7 +13,7 @@ body{
     align-content:space-between;
 }
 
-header{
+.heading{
     background-color:#16404D;
     display:flex;
     flex-direction:column;
@@ -29,17 +29,41 @@ header{
     padding:15px 0px 10px;
 }
 
+.winner-displayer-container{
+    text-align:center;
+    margin:190px 0px 250px;
+}
+
+.winner-displayer{
+    color:whitesmoke;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:100px;
+}
+
+.new-btn{
+    border:none;
+    padding:15px 25px;
+    background-color:#DDA853;
+    border-radius:15px;
+    font-size:17px;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    color:whitesmoke;
+    cursor:pointer;
+    margin-top:40px;
+}
+
+.hide{
+    display:none;
+}
+
 .turn-container{
-    display:flex;
-    gap:5px;
     color:white;
     font-family:Arial, Helvetica, sans-serif;
     font-weight:bold;
     padding-bottom:7px; 
-}
-
-.turn-second{
-    color:rgb(206, 206, 206);
 }
 
 .game-container{
@@ -66,7 +90,7 @@ header{
     width:110px;
     border:none;
     background-color:#A6CDC6;
-    font-size:75px;
+    font-size:60px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#16404D;
     border-radius:15px;
@@ -78,13 +102,13 @@ header{
     background-color:#16404D;
     text-align:center;
 }
+
 .restart-btn{
     text-transform:uppercase;
     background-color:#16404D;
     color:white;
     border:none;
     width:100%;
-    
     font-size:15px;
     border-radius:15px;
     padding:15px 25px;
