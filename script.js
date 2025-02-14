@@ -6,6 +6,7 @@ let actualWinner = document.querySelector(".winner-displayer");
 let newbtn = document.querySelector(".new-btn");
 let restartbtn = document.querySelector(".restart-btn");
 
+let moveCount = 0;
 let playerO = true;
 // All win conditions of the game 
 let winConditions = [
@@ -15,7 +16,7 @@ let winConditions = [
 ]
 
 
-//A function which show who the winner is
+//A function which shows who the winner is
 let showWinner = (winner) =>{
     actualWinner.innerText = winner + " WIN'S";
     winnerShow.classList.remove("hide");
@@ -24,6 +25,12 @@ let showWinner = (winner) =>{
     }
 }
 
+//A function which shows draw condition
+let showDraw = () =>{
+    actualWinner.innerText = "DRAW!";
+    winnerShow.classList.remove("hide");
+    moveCount = 0;
+}
 
 //A function which checks who won the game
 let checkWinner = () =>{
@@ -32,47 +39,53 @@ let checkWinner = () =>{
         val2 = boxes[patterns[1]].innerText;
         val3 = boxes[patterns[2]].innerText; 
 
-        if ( val1 !="" && val2 !="" && val3 !=""){
+        if (val1 && val2 && val3){
             if(val1 === val2 && val2 === val3){
                 console.log(val1, "is the winner of this game.");
                 showWinner(val1);
+                return;
             }
         }
+    }
+
+    if(moveCount === 9){
+        showDraw();
     }
 }
 
 //Toggle button for turn by turn system
 boxes.forEach((box)=>{
     box.addEventListener("click",()=>{
+        moveCount++;
         if(playerO){
             playerO = false;
             box.innerText = "O";
             turn.innerText = "X" + " Turn";
-            box.disabled = true;
         }
         else{
             playerO = true;
             box.innerText = "X";
             turn.innerText = "O" + " Turn";
-            box.disabled = true;
         }
+        box.disabled = true;
         checkWinner();
     })
 })
 
-newbtn.addEventListener("click",()=>{
+
+//Restart function
+let restart = () =>{
     winnerShow.classList.add("hide");
     for(box of boxes){
         box.disabled = false;
         box.innerText = "";
     }
-})
+    moveCount = 0;
+}
 
-restartbtn.addEventListener("click",()=>{
-    winnerShow.classList.add("hide");
-    for(box of boxes){
-        box.disabled = false;
-        box.innerText = "";
-    }
-})
+// For New Game 
+newbtn.addEventListener("click",restart);
 
+// For Restarting the game 
+restartbtn.addEventListener("click",restart);
+    
